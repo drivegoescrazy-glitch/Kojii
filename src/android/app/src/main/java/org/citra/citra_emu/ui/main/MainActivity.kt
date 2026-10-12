@@ -310,60 +310,8 @@ class MainActivity :
     }
 
     private fun showNavigation(visible: Boolean, animated: Boolean) {
-        if (!animated) {
-            if (visible) {
-                binding.navigationView.visibility = View.VISIBLE
-            } else {
-                binding.navigationView.visibility = View.INVISIBLE
-            }
-            return
-        }
-
-        val smallLayout = resources.getBoolean(R.bool.small_layout)
-        binding.navigationView.animate().apply {
-            if (visible) {
-                binding.navigationView.visibility = View.VISIBLE
-                duration = 300
-                interpolator = PathInterpolator(0.05f, 0.7f, 0.1f, 1f)
-
-                if (smallLayout) {
-                    binding.navigationView.translationY =
-                        binding.navigationView.height.toFloat() * 2
-                    translationY(0f)
-                } else {
-                    if (binding.navigationView.layoutDirection ==
-                        View.LAYOUT_DIRECTION_LTR
-                    ) {
-                        binding.navigationView.translationX =
-                            binding.navigationView.width.toFloat() * -2
-                        translationX(0f)
-                    } else {
-                        binding.navigationView.translationX =
-                            binding.navigationView.width.toFloat() * 2
-                        translationX(0f)
-                    }
-                }
-            } else {
-                duration = 300
-                interpolator = PathInterpolator(0.3f, 0f, 0.8f, 0.15f)
-
-                if (smallLayout) {
-                    translationY(binding.navigationView.height.toFloat() * 2)
-                } else {
-                    if (binding.navigationView.layoutDirection ==
-                        View.LAYOUT_DIRECTION_LTR
-                    ) {
-                        translationX(binding.navigationView.width.toFloat() * -2)
-                    } else {
-                        translationX(binding.navigationView.width.toFloat() * 2)
-                    }
-                }
-            }
-        }.withEndAction {
-            if (!visible) {
-                binding.navigationView.visibility = View.INVISIBLE
-            }
-        }.start()
+        // Kojii's minimal interface keeps the game library as the only home screen.
+        binding.navigationView.visibility = View.GONE
     }
 
     private fun showStatusBarShade(visible: Boolean) {
