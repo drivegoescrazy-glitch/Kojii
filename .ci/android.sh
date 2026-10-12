@@ -11,11 +11,9 @@ cd src/android
 chmod +x ./gradlew
 
 if [[ "$TARGET" == "googleplay" ]]; then
-    ./gradlew assembleGooglePlayRelease
-    ./gradlew bundleGooglePlayRelease
+    ./gradlew --parallel --build-cache assembleGooglePlayRelease bundleGooglePlayRelease
 else
-    ./gradlew assembleVanillaRelease
-    ./gradlew bundleVanillaRelease
+    ./gradlew --parallel --build-cache assembleVanillaRelease bundleVanillaRelease
 fi
 
 ccache -s -v
