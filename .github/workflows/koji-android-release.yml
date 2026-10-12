@@ -9,6 +9,11 @@ on:
 permissions:
   contents: write
 
+# Keep only the newest APK build for master running.
+concurrency:
+  group: koji-apk-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   build-android:
     name: Build vanilla Android APK
