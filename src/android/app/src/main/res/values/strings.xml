@@ -1125,4 +1125,13 @@
     <string name="update_check_channel_stable">Stable</string>
     <string name="update_check_channel_prerelease">Prerelease</string>
 
+    <string name="kojii_versions">Versions</string>
+    <string name="kojii_versions_loading">Loading Kojii releases…</string>
+    <string name="kojii_versions_failed">Could not load releases. Check your internet connection and try again.</string>
+    <string name="kojii_versions_empty">No releases with downloadable APKs were found.</string>
+    <string name="kojii_versions_install_permission">Allow Kojii to install APK updates</string>
+    <string name="kojii_versions_install_permission_description">Android requires permission to install an APK downloaded from GitHub. Enable it, return to Kojii, and choose the version again.</string>
+    <string name="kojii_versions_downloading">Downloading %1$s</string>
+    <string name="kojii_versions_download_failed">The APK download failed.</string>
+    <string name="kojii_versions_install">Install</string>
 </resources>
