@@ -79,7 +79,7 @@ enum class BooleanSetting(
     ),
     LLE_APPLETS(SettingKeys.lle_applets(), Settings.SECTION_SYSTEM, false),
     NEW_3DS(SettingKeys.is_new_3ds(), Settings.SECTION_SYSTEM, true),
-    LINEAR_FILTERING(SettingKeys.filter_mode(), Settings.SECTION_RENDERER, true),
+    LINEAR_FILTERING(SettingKeys.filter_mode(), Settings.SECTION_RENDERER, false),
     SHADERS_ACCURATE_MUL(SettingKeys.shaders_accurate_mul(), Settings.SECTION_RENDERER, false),
     DISK_SHADER_CACHE(SettingKeys.use_disk_shader_cache(), Settings.SECTION_RENDERER, true),
     DUMP_TEXTURES(SettingKeys.dump_textures(), Settings.SECTION_UTILITY, false),
@@ -101,7 +101,7 @@ enum class BooleanSetting(
     USE_SKIP_DUPLICATE_FRAMES(
         SettingKeys.use_skip_duplicate_frames(),
         Settings.SECTION_RENDERER,
-        false
+        true
     ),
     USE_FRAME_LIMIT(SettingKeys.use_frame_limit(), Settings.SECTION_RENDERER, true),
     DEBUG_RENDERER(SettingKeys.renderer_debug(), Settings.SECTION_DEBUG, false),
