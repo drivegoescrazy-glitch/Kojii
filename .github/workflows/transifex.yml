@@ -1,8 +1,6 @@
 name: citra-transifex
 
-on:
-  push:
-    branches: [ master ]
+on: {}
 
 jobs:
   transifex:
