@@ -217,6 +217,15 @@
                 android:layout_height="wrap_content"
                 android:contentDescription="@string/delete_shader_cache"
                 android:text="@string/delete_shader_cache" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/game_settings"
+                style="@style/Widget.Material3.Button.TonalButton.Icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:contentDescription="@string/per_game_settings"
+                android:text="@string/per_game_settings" />
         </LinearLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
