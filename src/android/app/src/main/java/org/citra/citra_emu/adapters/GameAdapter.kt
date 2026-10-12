@@ -58,6 +58,7 @@ import org.citra.citra_emu.features.settings.model.GraphicsAPI
 import org.citra.citra_emu.features.settings.model.IntSetting
 import org.citra.citra_emu.features.settings.model.Settings
 import org.citra.citra_emu.features.settings.model.TextureFilter
+import org.citra.citra_emu.features.settings.ui.SettingsActivity
 import org.citra.citra_emu.features.settings.utils.SettingsFile
 import org.citra.citra_emu.fragments.IndeterminateProgressDialogFragment
 import org.citra.citra_emu.model.Game
@@ -703,6 +704,20 @@ class GameAdapter(
             R.id.menu_button_uninstall
         ).setOnClickListener {
             showUninstallContextMenu(it, game, bottomSheetDialog)
+        }
+
+        bottomSheetView.findViewById<MaterialButton>(R.id.game_settings).setOnClickListener {
+            if (game.titleId == 0L) {
+                Toast.makeText(
+                    context,
+                    "Per-game settings require a valid title ID.",
+                    Toast.LENGTH_LONG
+                ).show()
+            } else {
+                val gameId = String.format(java.util.Locale.ROOT, "%016X", game.titleId)
+                bottomSheetDialog.dismiss()
+                SettingsActivity.launch(context, SettingsFile.FILE_NAME_CONFIG, gameId)
+            }
         }
 
         bottomSheetView.findViewById<MaterialButton>(R.id.delete_cache).setOnClickListener {

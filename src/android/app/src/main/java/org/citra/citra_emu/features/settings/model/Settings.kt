@@ -88,7 +88,18 @@ class Settings {
                 SettingsFile.saveFile(fileName, iniSections, view)
             }
         } else {
-            // TODO: Implement per game settings
+            val iniSections = TreeMap<String, SettingSection?>()
+            for (sectionName in configFileSectionsMap[SettingsFile.FILE_NAME_CONFIG].orEmpty()) {
+                val section = sections[sectionName]
+                if (section != null && section.settings.isNotEmpty()) {
+                    iniSections[sectionName] = section
+                }
+            }
+            SettingsFile.saveCustomGameSettings(gameId!!, iniSections, view)
+            view.showToastMessage(
+                CitraApplication.appContext.getString(R.string.ini_saved),
+                false
+            )
         }
     }
 

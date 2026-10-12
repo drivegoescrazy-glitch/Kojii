@@ -16,6 +16,7 @@
     <string name="home_search">Search</string>
     <string name="home_games">Applications</string>
     <string name="settings_description">Configure emulator settings</string>
+    <string name="per_game_settings">Per-game settings</string>
     <string name="install_game_content">Install CIA file</string>
     <string name="install_game_content_description">Install applications, updates or DLC</string>
     <string name="share_log">Share Log</string>
