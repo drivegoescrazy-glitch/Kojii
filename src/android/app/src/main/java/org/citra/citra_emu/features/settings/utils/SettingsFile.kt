@@ -219,6 +219,9 @@ object SettingsFile {
         }
     }
 
+    fun deleteCustomGameSettings(gameId: String): Boolean =
+        getCustomGameSettingsFile(gameId).delete()
+
     private fun getCustomGameSettingsFile(gameId: String): DocumentFile {
         val root = DocumentFile.fromTreeUri(CitraApplication.appContext, Uri.parse(userDirectory))
             ?: throw IOException("User directory is unavailable")
