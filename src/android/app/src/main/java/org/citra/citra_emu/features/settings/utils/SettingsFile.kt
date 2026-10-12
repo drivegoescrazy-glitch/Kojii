@@ -182,10 +182,51 @@ object SettingsFile {
         return configDirectory!!.findFile("$fileName.ini")!!
     }
 
+    fun saveCustomGameSettings(
+        gameId: String,
+        sections: TreeMap<String, SettingSection?>,
+        view: SettingsActivityView
+    ) {
+        val ini = getCustomGameSettingsFile(gameId)
+        try {
+            val context = CitraApplication.appContext
+            val inputStream = context.contentResolver.openInputStream(ini.uri)
+            val writer = if (inputStream != null) {
+                Wini(inputStream).also { inputStream.close() }
+            } else {
+                Wini()
+            }
+            for ((_, section) in sections) {
+                if (section != null) {
+                    writeSection(writer, section)
+                }
+            }
+            val outputStream = context.contentResolver.openOutputStream(ini.uri, "wt")
+                ?: throw IOException("Unable to open per-game settings file")
+            writer.store(outputStream)
+            outputStream.flush()
+            outputStream.close()
+        } catch (e: Exception) {
+            Log.error("[SettingsFile] Failed to save per-game settings $gameId.ini: ${e.message}")
+            view.showToastMessage(
+                CitraApplication.appContext.getString(
+                    R.string.error_saving,
+                    "$gameId",
+                    e.message
+                ),
+                false
+            )
+        }
+    }
+
     private fun getCustomGameSettingsFile(gameId: String): DocumentFile {
         val root = DocumentFile.fromTreeUri(CitraApplication.appContext, Uri.parse(userDirectory))
-        val configDirectory = root!!.findFile("GameSettings")
-        return configDirectory!!.findFile("$gameId.ini")!!
+            ?: throw IOException("User directory is unavailable")
+        val configDirectory = root.findFile("GameSettings") ?: root.createDirectory("GameSettings")
+            ?: throw IOException("Unable to create GameSettings directory")
+        return configDirectory.findFile("$gameId.ini")
+            ?: configDirectory.createFile("text/plain", "$gameId.ini")
+            ?: throw IOException("Unable to create per-game settings file")
     }
 
     private fun sectionFromLine(line: String, isCustomGame: Boolean): SettingSection {
