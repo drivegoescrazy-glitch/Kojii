@@ -21,6 +21,17 @@
         app:navGraph="@navigation/home_navigation"
         tools:layout="@layout/fragment_games" />
 
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/button_kojii_updates"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="16dp"
+        android:elevation="8dp"
+        android:text="@string/kojii_versions"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/navigation_view"
         android:layout_width="match_parent"
