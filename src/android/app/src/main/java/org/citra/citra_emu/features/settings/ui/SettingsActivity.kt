@@ -46,6 +46,7 @@ class SettingsActivity :
     private val presenter = SettingsActivityPresenter(this)
 
     private lateinit var binding: ActivitySettingsBinding
+    private var currentGameId: String? = null
 
     private val settingsViewModel: SettingsViewModel by viewModels()
 
@@ -66,6 +67,7 @@ class SettingsActivity :
         val launcher = intent
         val gameID = launcher.getStringExtra(ARG_GAME_ID)
         val menuTag = launcher.getStringExtra(ARG_MENU_TAG)
+        currentGameId = gameID
         presenter.onCreate(savedInstanceState, menuTag!!, gameID!!)
 
         // Show "Back" button in the action bar for navigation
@@ -202,6 +204,19 @@ class SettingsActivity :
     }
 
     fun onSettingsReset() {
+        // Per-game reset must never delete or modify the global configuration.
+        val gameId = currentGameId
+        if (!gameId.isNullOrEmpty()) {
+            presenter.onSettingsReset()
+            val deleted = SettingsFile.deleteCustomGameSettings(gameId)
+            showToastMessage(
+                if (deleted) getString(R.string.settings_reset) else getString(R.string.error_saving, gameId, "Unable to delete per-game settings"),
+                true
+            )
+            finish()
+            return
+        }
+
         // Prevents saving to a non-existent settings file
         presenter.onSettingsReset()
 
