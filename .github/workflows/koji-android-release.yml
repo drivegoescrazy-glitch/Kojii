@@ -9,10 +9,6 @@ on:
 permissions:
   contents: write
 
-concurrency:
-  group: koji-android-${{ github.ref }}
-  cancel-in-progress: false
-
 jobs:
   build-android:
     name: Build vanilla Android APK
@@ -55,8 +51,12 @@ jobs:
         if: ${{ startsWith(github.ref, 'refs/tags/v') }}
         run: echo "GIT_TAG_NAME=${GITHUB_REF_NAME}" >> "$GITHUB_ENV"
 
-      - name: Build APK
-        run: JAVA_HOME="$JAVA_HOME_17_X64" ./.ci/android.sh
+      - name: Build APK only
+        run: |
+          set -euo pipefail
+          cd src/android
+          chmod +x ./gradlew
+          JAVA_HOME="$JAVA_HOME_17_X64" ./gradlew --no-daemon --stacktrace assembleVanillaRelease
 
       - name: Find and stage APK
         id: apk
@@ -64,9 +64,9 @@ jobs:
         run: |
           set -euo pipefail
           mkdir -p release-assets
-          mapfile -t apks < <(find src/android/app/build/outputs/apk -type f -name '*.apk' | sort)
+          mapfile -t apks < <(find src/android/app/build/outputs -type f -name '*.apk' | sort)
           if [ "${#apks[@]}" -eq 0 ]; then
-            echo "No APK was produced under src/android/app/build/outputs/apk" >&2
+            echo "No APK was produced under src/android/app/build/outputs" >&2
             find src/android/app/build -type f \( -name '*.apk' -o -name '*.aab' \) -print
             exit 1
           fi
