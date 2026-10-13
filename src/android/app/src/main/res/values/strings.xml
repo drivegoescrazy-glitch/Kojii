@@ -17,6 +17,12 @@
     <string name="home_games">Applications</string>
     <string name="settings_description">Configure emulator settings</string>
     <string name="per_game_settings">Per-game settings</string>
+    <string name="kojii_max_performance">Max Performance</string>
+    <string name="kojii_max_performance_description">Apply per-game settings aimed at the highest stable frame rate. Uses native-speed limit and 1x resolution; some games may still run slowly.</string>
+    <string name="kojii_enabled">ON</string>
+    <string name="kojii_disabled">OFF</string>
+    <string name="kojii_performance_enabled_message">Max Performance enabled for this game. Lower resolution may reduce image quality.</string>
+    <string name="kojii_performance_disabled_message">Max Performance disabled. Previous settings restored.</string>
     <string name="install_game_content">Install CIA file</string>
     <string name="install_game_content_description">Install applications, updates or DLC</string>
     <string name="share_log">Share Log</string>
