@@ -164,6 +164,12 @@ class GamesFragment : Fragment() {
         )
 
         binding.gridGames.apply {
+            // The grid's item dimensions are stable; avoid redundant full-layout passes.
+            setHasFixedSize(true)
+            // Keep a small number of off-screen game cards ready for smoother scrolling.
+            setItemViewCacheSize(8)
+            // Avoid animating every card update when the library refreshes.
+            itemAnimator = null
             layoutManager = GridLayoutManager(
                 requireContext(),
                 resources.getInteger(R.integer.game_grid_columns)
