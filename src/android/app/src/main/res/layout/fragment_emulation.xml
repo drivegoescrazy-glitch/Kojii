@@ -137,7 +137,12 @@
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_gravity="start"
+        android:background="#FF101010"
         app:headerLayout="@layout/header_in_game"
+        app:itemIconTint="#FFFF8A00"
+        app:itemTextColor="#FFFFF4E6"
+        app:itemHorizontalPadding="24dp"
+        app:itemVerticalPadding="12dp"
         app:menu="@menu/menu_in_game"
         tools:visibility="gone" />
 
