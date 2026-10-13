@@ -1125,7 +1125,7 @@
     <string name="update_check_channel_stable">Stable</string>
     <string name="update_check_channel_prerelease">Prerelease</string>
 
-    <string name="kojii_versions">Versions</string>
+    <string name="kojii_versions">Kojii Updates</string>
     <string name="kojii_versions_loading">Loading Kojii releases…</string>
     <string name="kojii_versions_failed">Could not load releases. Check your internet connection and try again.</string>
     <string name="kojii_versions_empty">No releases with downloadable APKs were found.</string>
