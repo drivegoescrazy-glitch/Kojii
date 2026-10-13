@@ -26,6 +26,7 @@ import org.citra.citra_emu.features.settings.model.AbstractSetting
 import org.citra.citra_emu.features.settings.model.AbstractShortSetting
 import org.citra.citra_emu.features.settings.model.AbstractStringSetting
 import org.citra.citra_emu.features.settings.model.BooleanSetting
+import org.citra.citra_emu.features.settings.model.IntSetting
 import org.citra.citra_emu.features.settings.model.FloatSetting
 import org.citra.citra_emu.features.settings.model.IntListSetting
 import org.citra.citra_emu.features.settings.model.IntSetting
@@ -132,6 +133,64 @@ class SettingsFragmentPresenter(private val fragmentView: SettingsFragmentView) 
         fragmentView.showSettingsList(settingsList!!)
     }
 
+    private fun performanceProfileKey() = "kojii_max_performance_" + gameId
+
+    private fun toggleMaxPerformanceProfile() {
+        val enabled = preferences.getBoolean(performanceProfileKey(), false)
+        val boolSettings = listOf(
+            BooleanSetting.CPU_JIT,
+            BooleanSetting.USE_FASTINTERP,
+            BooleanSetting.HW_SHADER,
+            BooleanSetting.SHADER_JIT,
+            BooleanSetting.ASYNC_SHADERS,
+            BooleanSetting.DISK_SHADER_CACHE,
+            BooleanSetting.VSYNC,
+            BooleanSetting.USE_SKIP_DUPLICATE_FRAMES
+        )
+        val intSettings = listOf(IntSetting.RESOLUTION_FACTOR, IntSetting.FRAME_LIMIT)
+
+        if (!enabled) {
+            val editor = preferences.edit()
+            boolSettings.forEach { editor.putBoolean(performanceProfileKey() + "_old_" + it.key, it.boolean) }
+            intSettings.forEach { editor.putInt(performanceProfileKey() + "_old_" + it.key, it.int) }
+            editor.putBoolean(performanceProfileKey() + "_snapshot", true).apply()
+
+            BooleanSetting.CPU_JIT.boolean = true
+            BooleanSetting.USE_FASTINTERP.boolean = true
+            BooleanSetting.HW_SHADER.boolean = true
+            BooleanSetting.SHADER_JIT.boolean = true
+            BooleanSetting.ASYNC_SHADERS.boolean = true
+            BooleanSetting.DISK_SHADER_CACHE.boolean = true
+            BooleanSetting.VSYNC.boolean = false
+            BooleanSetting.USE_SKIP_DUPLICATE_FRAMES.boolean = true
+            IntSetting.RESOLUTION_FACTOR.int = 1
+            IntSetting.FRAME_LIMIT.int = 100
+            preferences.edit().putBoolean(performanceProfileKey(), true).apply()
+            fragmentView.showToastMessage(
+                settingsActivity.getString(R.string.kojii_performance_enabled_message),
+                false
+            )
+        } else {
+            if (preferences.getBoolean(performanceProfileKey() + "_snapshot", false)) {
+                boolSettings.forEach {
+                    val key = performanceProfileKey() + "_old_" + it.key
+                    if (preferences.contains(key)) it.boolean = preferences.getBoolean(key, it.boolean)
+                }
+                intSettings.forEach {
+                    val key = performanceProfileKey() + "_old_" + it.key
+                    if (preferences.contains(key)) it.int = preferences.getInt(key, it.int)
+                }
+            }
+            preferences.edit().putBoolean(performanceProfileKey(), false).apply()
+            fragmentView.showToastMessage(
+                settingsActivity.getString(R.string.kojii_performance_disabled_message),
+                false
+            )
+        }
+        fragmentView.onSettingChanged()
+        loadSettingsList()
+    }
+
     /** Returns the portrait mode width */
     private fun getDimensions(): IntArray {
         val dm = Resources.getSystem().displayMetrics
@@ -151,6 +210,23 @@ class SettingsFragmentPresenter(private val fragmentView: SettingsFragmentView) 
 
     private fun addConfigSettings(sl: ArrayList<SettingsItem>) {
         settingsActivity.setToolbarTitle(settingsActivity.getString(R.string.preferences_settings))
+        if (gameId.isNotEmpty()) {
+            sl.add(
+                RunnableSetting(
+                    R.string.kojii_max_performance,
+                    R.string.kojii_max_performance_description,
+                    false,
+                    runnable = { toggleMaxPerformanceProfile() },
+                    value = {
+                        if (preferences.getBoolean(performanceProfileKey(), false)) {
+                            settingsActivity.getString(R.string.kojii_enabled)
+                        } else {
+                            settingsActivity.getString(R.string.kojii_disabled)
+                        }
+                    }
+                )
+            )
+        }
         sl.apply {
             add(
                 SubmenuSetting(
