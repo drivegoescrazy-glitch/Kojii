@@ -109,10 +109,6 @@ class MainActivity :
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.buttonKojiiUpdates?.setOnClickListener {
-            KojiiVersionSelector.show(this)
-        }
-
         WindowCompat.setDecorFitsSystemWindows(window, false)
         window.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_NOTHING)
 
@@ -153,6 +149,25 @@ class MainActivity :
         val navHostFragment =
             supportFragmentManager.findFragmentById(R.id.fragment_container) as NavHostFragment
         setUpNavigation(savedInstanceState, navHostFragment.navController)
+        binding.kojiiSidebar.setOnItemSelectedListener { item ->
+            when (item.itemId) {
+                R.id.kojii_games -> {
+                    if (navHostFragment.navController.currentDestination?.id != R.id.gamesFragment) {
+                        navHostFragment.navController.navigate(R.id.gamesFragment)
+                    }
+                    true
+                }
+                R.id.kojii_updates -> {
+                    KojiiVersionSelector.show(this)
+                    true
+                }
+                R.id.kojii_settings -> {
+                    SettingsActivity.launch(this, SettingsFile.FILE_NAME_CONFIG, "")
+                    true
+                }
+                else -> false
+            }
+        }
         (binding.navigationView as NavigationBarView).setOnItemReselectedListener {
             when (it.itemId) {
                 R.id.gamesFragment -> {
