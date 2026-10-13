@@ -109,7 +109,7 @@ class MainActivity :
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.buttonKojiiUpdates.setOnClickListener {
+        binding.buttonKojiiUpdates?.setOnClickListener {
             KojiiVersionSelector.show(this)
         }
 
