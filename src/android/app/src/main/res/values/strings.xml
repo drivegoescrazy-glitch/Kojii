@@ -3,12 +3,12 @@
 
     <!-- General application strings -->
     <string name="app_name" translatable="false">Kojii</string>
-    <string name="app_disclaimer">This software will run applications for the Nintendo 3DS handheld game console. No game titles are included.\n\nBefore you can begin with emulating, please select a folder to store Azahar\'s user data in.\n\nWhat\'s this:\n<a href='https://github.com/azahar-emu/azahar/wiki/Android-User-Data-and-Storage'>Wiki - Citra Android user data and storage</a></string>
-    <string name="app_notification_channel_name" translatable="false">Azahar</string>
-    <string name="app_notification_channel_id" translatable="false">Azahar</string>
-    <string name="app_notification_channel_description">Azahar 3DS emulator notifications</string>
-    <string name="app_notification_running">Azahar is Running</string>
-    <string name="app_game_install_description">Next, you will need to select an Applications Folder. Azahar will display all of the 3DS ROMs inside of the selected folder in the app.\n\nCIA ROMs, updates and DLC will need to be installed separately by clicking on the folder icon and selecting Install CIA.</string>
+    <string name="app_disclaimer">This software will run applications for the Nintendo 3DS handheld game console. No game titles are included.\n\nBefore you can begin with emulating, please select a folder to store Kojii\'s user data in.\n\nWhat\'s this:\n<a href='https://github.com/azahar-emu/azahar/wiki/Android-User-Data-and-Storage'>Wiki - Citra Android user data and storage</a></string>
+    <string name="app_notification_channel_name" translatable="false">Kojii</string>
+    <string name="app_notification_channel_id" translatable="false">Kojii</string>
+    <string name="app_notification_channel_description">Kojii 3DS emulator notifications</string>
+    <string name="app_notification_running">Kojii is Running</string>
+    <string name="app_game_install_description">Next, you will need to select an Applications Folder. Kojii will display all of the 3DS ROMs inside of the selected folder in the app.\n\nCIA ROMs, updates and DLC will need to be installed separately by clicking on the folder icon and selecting Install CIA.</string>
 
     <!-- Home Strings -->
     <string name="grid_menu_core_settings">Settings</string>
@@ -20,7 +20,7 @@
     <string name="install_game_content">Install CIA file</string>
     <string name="install_game_content_description">Install applications, updates or DLC</string>
     <string name="share_log">Share Log</string>
-    <string name="share_log_description">Share Azahar\'s log file to debug issues</string>
+    <string name="share_log_description">Share Kojii\'s log file to debug issues</string>
     <string name="gpu_driver_manager">GPU Driver Manager</string>
     <string name="install_gpu_driver">Install GPU driver</string>
     <string name="install_gpu_driver_description">Install alternative drivers for potentially better performance or accuracy</string>
@@ -29,12 +29,12 @@
     <string name="custom_driver_not_supported_description">Custom driver loading isn\'t currently supported for this device.\nCheck this option again in the future to see if support was added!</string>
     <string name="share_log_not_found">No log file found</string>
     <string name="select_games_folder">Select Applications Folder</string>
-    <string name="select_games_folder_description">Allows Azahar to populate the application list</string>
+    <string name="select_games_folder_description">Allows Kojii to populate the application list</string>
     <string name="about">About</string>
     <string name="citra_description">An open-source 3DS emulator\nLicensed under GPLv3 or any later version</string>
     <string name="about_description">Build version, credits, and more</string>
     <string name="games_dir_selected">Application directory selected</string>
-    <string name="select_citra_user_folder_home_description">Changes the files that Azahar uses to load applications</string>
+    <string name="select_citra_user_folder_home_description">Changes the files that Kojii uses to load applications</string>
     <string name="theme_and_color_description">Modify the look of the app</string>
     <string name="install_cia_title">Install CIA</string>
 
@@ -61,9 +61,9 @@
     <!-- About screen strings -->
     <string name="copied_to_clipboard">Copied to clipboard</string>
     <string name="contributors">Contributors</string>
-    <string name="contributors_description">Contributors who made Azahar possible</string>
+    <string name="contributors_description">Contributors who made Kojii possible</string>
     <string name="contributors_link" translatable="false">https://github.com/azahar-emu/azahar/graphs/contributors</string>
-    <string name="licenses_description">Projects used by Azahar for Android</string>
+    <string name="licenses_description">Projects used by Kojii for Android</string>
     <string name="build">Build</string>
     <string name="licenses">Licenses</string>
     <string name="support_link" translatable="false">https://discord.gg/4ZjMpAp3M6</string>
@@ -72,7 +72,7 @@
 
     <!-- Setup strings -->
     <string name="welcome">Welcome!</string>
-    <string name="welcome_description">Learn how to set up &lt;b>Azahar&lt;/b> and jump into emulation.</string>
+    <string name="welcome_description">Learn how to set up &lt;b>Kojii&lt;/b> and jump into emulation.</string>
     <string name="get_started">Get started</string>
     <string name="step_complete">Complete!</string>
     <string name="games">Applications</string>
@@ -84,15 +84,15 @@
     <string name="notifications_description">Grant the notification permission with the button below.</string>
     <string name="give_permission">Grant permission</string>
     <string name="notification_warning">Skip granting the notification permission?</string>
-    <string name="notification_warning_description">Azahar won\'t be able to notify you of important information.</string>
+    <string name="notification_warning_description">Kojii won\'t be able to notify you of important information.</string>
     <string name="filesystem_permission_warning">Missing Permissions</string>
-    <string name="filesystem_permission_warning_description">Azahar requires permission to manage files on this device in order to store and manage its data.\n\nPlease grant the \"Filesystem\" permission before continuing.</string>
+    <string name="filesystem_permission_warning_description">Kojii requires permission to manage files on this device in order to store and manage its data.\n\nPlease grant the \"Filesystem\" permission before continuing.</string>
     <string name="camera_permission">Camera</string>
     <string name="camera_permission_description">Grant the camera permission below to emulate the 3DS camera.</string>
     <string name="microphone_permission">Microphone</string>
     <string name="microphone_permission_description">Grant the microphone permission below to emulate the 3DS microphone.</string>
     <string name="filesystem_permission">Filesystem</string>
-    <string name="filesystem_permission_description">Grant the filesystem permission below to allow Azahar to store files.</string>
+    <string name="filesystem_permission_description">Grant the filesystem permission below to allow Kojii to store files.</string>
     <string name="permission_denied">Permission denied</string>
     <string name="add_games_warning">Skip selecting applications folder?</string>
     <string name="add_games_warning_description">Software won\'t be displayed in the Applications list if a folder isn\'t selected.</string>
@@ -106,19 +106,19 @@
     <string name="warning_cancel">Cancel</string>
     <string name="select_citra_user_folder">Select User Folder</string>
     <string name="select_citra_user_folder_description"><![CDATA[Select your <a href="https://github.com/azahar-emu/azahar/wiki/Android-User-Data-and-Storage">user data</a> directory with the button below.]]></string>
-    <string name="select_which_user_directory_to_use">You appear to have user directories set for both Lime3DS and Azahar. This is likely because you upgraded to Azahar, and when prompted chose a different user directory than what was being used for Lime3DS.\n\nThis may have resulted in you thinking you lost saves or other settings - we apologize if that happened.\n\nWould you like to go back to using your original Lime3DS user directory, restoring settings and save games from Lime3DS, or keep your current Azahar user directory?\n\nNeither directory will be deleted, regardless of your choice, and you may freely switch between them using the Select User Folder option.</string>
-    <string name="keep_current_azahar_directory">Keep Current Azahar Directory</string>
+    <string name="select_which_user_directory_to_use">You appear to have user directories set for both Lime3DS and Kojii. This is likely because you upgraded to Kojii, and when prompted chose a different user directory than what was being used for Lime3DS.\n\nThis may have resulted in you thinking you lost saves or other settings - we apologize if that happened.\n\nWould you like to go back to using your original Lime3DS user directory, restoring settings and save games from Lime3DS, or keep your current Kojii user directory?\n\nNeither directory will be deleted, regardless of your choice, and you may freely switch between them using the Select User Folder option.</string>
+    <string name="keep_current_azahar_directory">Keep Current Kojii Directory</string>
     <string name="use_prior_lime3ds_directory">Use Prior Lime3DS Directory</string>
     <string name="select">Select</string>
     <string name="cannot_skip">You can\'t skip setting up the user folder</string>
-    <string name="cannot_skip_directory_description">This step is required to allow Azahar to work. Please select a directory and then you can continue.</string>
+    <string name="cannot_skip_directory_description">This step is required to allow Kojii to work. Please select a directory and then you can continue.</string>
     <string name="selecting_user_directory_without_write_permissions">You have lost write permissions on your <a href="https://github.com/azahar-emu/azahar/wiki/Android-User-Data-and-Storage">user data</a> directory, where saves and other information are stored. This can happen after some app or Android updates. Please re-select the directory to regain permissions so you can continue.</string>
     <string name="invalid_selection">Invalid Selection</string>
     <string name="invalid_user_directory">The user directory selection was invalid.\nPlease re-select the user directory, ensuring that you navigate to it from the root of your device\'s storage.</string>
-    <string name="filesystem_permission_lost">Azahar has lost permission to manage files on this device. This can happen after some app or Android updates. Please re-grant this permission on the next screen to continue using the app.</string>
+    <string name="filesystem_permission_lost">Kojii has lost permission to manage files on this device. This can happen after some app or Android updates. Please re-grant this permission on the next screen to continue using the app.</string>
     <string name="cannot_skip_directory_help" translatable="false">https://github.com/azahar-emu/azahar/wiki/Android-User-Data-and-Storage</string>
     <string name="set_up_theme_settings">Theme Settings</string>
-    <string name="setup_theme_settings_description">Configure your theme preferences for Azahar.</string>
+    <string name="setup_theme_settings_description">Configure your theme preferences for Kojii.</string>
     <string name="setup_set_theme">Set Theme</string>
 
     <!-- Search Strings -->
@@ -185,10 +185,10 @@
     <string name="setup_system_files">System Files</string>
     <string name="setup_system_files_description">Perform system file operations such as installing system files or booting the Home Menu</string>
     <string name="setup_tool_connect">Connect to Artic Setup Tool</string>
-    <string name="setup_system_files_preamble"><![CDATA[Azahar needs console unique data and firmware files from a real console to be able to use some of its features. Such files and data can be set up with the <a href=https://github.com/azahar-emu/ArticSetupTool>Azahar Artic Setup Tool</a>.<br>Notes:<ul><li><b>This operation will install console unique data to Azahar, do not share your user or nand folders after performing the setup process!</b></li><li>While doing the setup process, Azahar will link to the console running the setup tool. You can unlink the console later from the System Files tab in the emulator options menu.</li><li>Do not go online with both Azahar and your 3DS console at the same time after setting up system files, as this could cause issues.</li><li>Old 3DS setup is needed for the New 3DS setup to work (setting up both is recommended).</li><li>Both setup modes will work regardless of the model of the console running the setup tool.</li></ul>]]></string>
+    <string name="setup_system_files_preamble"><![CDATA[Kojii needs console unique data and firmware files from a real console to be able to use some of its features. Such files and data can be set up with the <a href=https://github.com/azahar-emu/ArticSetupTool>Kojii Artic Setup Tool</a>.<br>Notes:<ul><li><b>This operation will install console unique data to Kojii, do not share your user or nand folders after performing the setup process!</b></li><li>While doing the setup process, Kojii will link to the console running the setup tool. You can unlink the console later from the System Files tab in the emulator options menu.</li><li>Do not go online with both Kojii and your 3DS console at the same time after setting up system files, as this could cause issues.</li><li>Old 3DS setup is needed for the New 3DS setup to work (setting up both is recommended).</li><li>Both setup modes will work regardless of the model of the console running the setup tool.</li></ul>]]></string>
     <string name="setup_system_files_detect">Fetching current system files status, please wait...</string>
     <string name="delete_system_files">Unlink Console Unique Data</string>
-    <string name="delete_system_files_description"><![CDATA[This action will unlink your real console from Azahar, with the following consequences:<br><ul><li>Your OTP, SecureInfo and LocalFriendCodeSeed will be removed from Azahar.</li><li>Your friend list will reset and you will be logged out of your NNID/PNID account.</li><li>System files and eshop titles obtained through Azahar will become inaccessible until the same console is linked again using the setup tool (save data will not be lost).</li></ul><br>Continue?]]></string>
+    <string name="delete_system_files_description"><![CDATA[This action will unlink your real console from Kojii, with the following consequences:<br><ul><li>Your OTP, SecureInfo and LocalFriendCodeSeed will be removed from Kojii.</li><li>Your friend list will reset and you will be logged out of your NNID/PNID account.</li><li>System files and eshop titles obtained through Kojii will become inaccessible until the same console is linked again using the setup tool (save data will not be lost).</li></ul><br>Continue?]]></string>
     <string name="setup_system_files_o3ds">Old 3DS Setup</string>
     <string name="setup_system_files_n3ds">New 3DS Setup</string>
     <string name="setup_system_files_possible">Setup is possible.</string>
@@ -381,7 +381,7 @@
     <string name="renderer_debug">Debug Renderer</string>
     <string name="renderer_debug_description">Log additional graphics related debug information. When enabled, game performance will be significantly reduced.</string>
     <string name="instant_debug_log">Flush Log Output on Every Message</string>
-    <string name="instant_debug_log_description">Immediately commits the debug log to file. Use this if Azahar crashes and the log output is being cut.</string>
+    <string name="instant_debug_log_description">Immediately commits the debug log to file. Use this if Kojii crashes and the log output is being cut.</string>
     <string name="delay_start_lle_modules">Delay Start With LLE Modules</string>
     <string name="delay_start_lle_modules_description">Delays the start of the app when LLE modules are enabled.</string>
     <string name="deterministic_async_operations">Deterministic Async Operations</string>
@@ -437,7 +437,7 @@
     <string name="setting_not_editable">You can\'t edit this now</string>
     <string name="setting_disabled">Setting disabled</string>
     <string name="setting_disabled_description_incompatible_setting">This setting is currently disabled due to another setting not being the appropriate value.</string>
-    <string name="setting_disabled_description_angle">The renderer can\'t be changed because the device is using ANGLE for OpenGL, which is currently incompatible with Azahar. Vulkan will be used.</string>
+    <string name="setting_disabled_description_angle">The renderer can\'t be changed because the device is using ANGLE for OpenGL, which is currently incompatible with Kojii. Vulkan will be used.</string>
     <string name="setting_not_editable_description">This option can\'t be changed while a game is running.</string>
     <string name="auto_select">Auto-Select</string>
     <string name="start">Start</string>
@@ -475,7 +475,7 @@
     <string name="loader_error_applying_patches_description">A generic error occurred while applying a patch to the application. Please check the log for more details.</string>
     <string name="loader_error_patch_wrong_application">Failed to apply a patch because it is designed for a different application. Please make sure you are using the patches for the right application, region and version.</string>
     <string name="loader_error_encrypted">Your ROM is Encrypted</string>
-    <string name="loader_error_encrypted_description"><![CDATA[Azahar does not support encrypted applications. Read our <a href="https://azahar-emu.org/blog/game-loading-changes/">blog post</a> for more information.]]></string>
+    <string name="loader_error_encrypted_description"><![CDATA[Kojii does not support encrypted applications. Read our <a href="https://azahar-emu.org/blog/game-loading-changes/">blog post</a> for more information.]]></string>
     <string name="loader_error_file_not_found">ROM file does not exist</string>
     <string name="no_game_present">No bootable game present!</string>
     <string name="invalid_rom">Invalid ROM</string>
@@ -528,7 +528,7 @@
     <string name="emulation_switch_screen_layout">Landscape Screen Layout</string>
     <string name="emulation_switch_portrait_layout">Portrait Screen Layout</string>
     <string name="emulation_secondary_display_enable">Enable Secondary Display</string>
-    <string name="emulation_secondary_display_enable_description">If disabled, Azahar will let Android manage connected displays. If this is enabled and multiple displays are connected, you can select which one Azahar will use in the Emulation Quick Menu</string>
+    <string name="emulation_secondary_display_enable_description">If disabled, Kojii will let Android manage connected displays. If this is enabled and multiple displays are connected, you can select which one Kojii will use in the Emulation Quick Menu</string>
     <string name="emulation_switch_secondary_layout">Secondary Display Layout</string>
     <string name="emulation_secondary_display_management">Secondary Display</string>
     <string name="emulation_select_secondary_display">Choose Display</string>
@@ -597,7 +597,7 @@
     <string name="write_permission_needed">You need to allow write access to external storage for the emulator to work</string>
     <string name="load_settings">Loading Settings…</string>
 
-    <string name="external_storage_not_mounted">The external storage needs to be available in order to use Azahar</string>
+    <string name="external_storage_not_mounted">The external storage needs to be available in order to use Kojii</string>
 
     <string name="select_dir">Select This Directory</string>
     <string name="empty_gamelist">No files were found or no game directory has been selected yet.</string>
@@ -627,11 +627,11 @@
     <!-- Camera -->
     <string name="camera_select_image">Select Image</string>
     <string name="camera">Camera</string>
-    <string name="camera_permission_needed">Azahar needs to access your camera to emulate the 3DS\'s cameras.\n\nAlternatively, you can also set \"Image Source\" to \"Still Image\" in Camera Settings.</string>
+    <string name="camera_permission_needed">Kojii needs to access your camera to emulate the 3DS\'s cameras.\n\nAlternatively, you can also set \"Image Source\" to \"Still Image\" in Camera Settings.</string>
 
     <!-- Microphone -->
     <string name="microphone">Microphone</string>
-    <string name="microphone_permission_needed">Azahar needs to access your microphone to emulate the 3DS\'s microphone.\n\nAlternatively, you can also change \"Audio Input Device\" in Audio Settings.</string>
+    <string name="microphone_permission_needed">Kojii needs to access your microphone to emulate the 3DS\'s microphone.\n\nAlternatively, you can also change \"Audio Input Device\" in Audio Settings.</string>
 
     <!-- Core Errors -->
     <string name="abort_button">Abort</string>
@@ -646,7 +646,7 @@
     <string name="unsupported_encrypted">Unsupported encrypted application</string>
     <string name="invalid_system_mode">Invalid system mode</string>
     <string name="invalid_system_mode_message">New 3DS exclusive applications cannot be loaded without enabling the New 3DS mode.</string>
-    <string name="savestate_build_mismatch_message"><![CDATA[Could not load savestate because it was created on a different Azahar version:<br/><b>Azahar %1$s</b>.<br/><br/>Please read our blog entry <a href="https://azahar-emu.org/blog/understanding-save-states/">understanding savestates</a> for more information.<br/><br/>To recover your progress, downgrade to <b>Azahar %1$s</b>, load this savestate and use the application\'s built-in save functionality.]]></string>
+    <string name="savestate_build_mismatch_message"><![CDATA[Could not load savestate because it was created on a different Kojii version:<br/><b>Kojii %1$s</b>.<br/><br/>Please read our blog entry <a href="https://azahar-emu.org/blog/understanding-save-states/">understanding savestates</a> for more information.<br/><br/>To recover your progress, downgrade to <b>Kojii %1$s</b>, load this savestate and use the application\'s built-in save functionality.]]></string>
 
     <!-- Disk Shader Cache -->
     <string name="preparing_shaders">Preparing Shaders</string>
@@ -729,9 +729,9 @@
         <item quantity="one">Installing %d file. See notification for more details.</item>
         <item quantity="other">Installing %d files. See notification for more details.</item>
     </plurals>
-    <string name="cia_install_notification_channel_name" translatable="false">Azahar CIA Install</string>
+    <string name="cia_install_notification_channel_name" translatable="false">Kojii CIA Install</string>
     <string name="cia_install_notification_channel_id" translatable="false">citra-cia</string>
-    <string name="cia_install_notification_channel_description">Azahar notifications during CIA Install</string>
+    <string name="cia_install_notification_channel_description">Kojii notifications during CIA Install</string>
     <string name="cia_install_notification_title">Installing CIA</string>
     <string name="cia_install_notification_installing">Installing %1$s (%2$d/%3$d)</string>
     <string name="cia_install_notification_success_title">Successfully installed CIA</string>
@@ -739,7 +739,7 @@
     <string name="cia_install_success">\"%s\" has been installed successfully</string>
     <string name="cia_install_error_aborted">The installation of \"%s\" was aborted.\n Please see the log for more details</string>
     <string name="cia_install_error_invalid">\"%s\" is not a valid CIA</string>
-    <string name="cia_install_error_encrypted">\"%s\" must be decrypted before being used with Azahar.\n A real 3DS is required</string>
+    <string name="cia_install_error_encrypted">\"%s\" must be decrypted before being used with Kojii.\n A real 3DS is required</string>
     <string name="cia_install_error_unknown">An unknown error occurred while installing \"%s\".\n Please see the log for more details</string>
 
     <!-- Memory Sizes -->
@@ -1117,9 +1117,9 @@
     <string name="stable_channel_update_link" translatable="false">https://azahar-emu.org/pages/download/</string>
     <string name="prerelease_channel_update_link" translatable="false">https://github.com/azahar-emu/azahar/releases</string>
     <string name="update_available">Update Available</string>
-    <string name="update_available_description">A newer version of Azahar is available (version %1$s).\nWould you like to download it?</string>
+    <string name="update_available_description">A newer version of Kojii is available (version %1$s).\nWould you like to download it?</string>
     <string name="check_for_updates">Check For Updates</string>
-    <string name="check_for_updates_description">Display an in-app notification when an update is available for Azahar.</string>
+    <string name="check_for_updates_description">Display an in-app notification when an update is available for Kojii.</string>
     <string name="update_check_channel">Update Channel</string>
     <string name="update_check_channel_description">Which update channel to use when checking for updates.</string>
     <string name="update_check_channel_stable">Stable</string>
