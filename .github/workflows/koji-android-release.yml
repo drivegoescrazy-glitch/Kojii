@@ -42,12 +42,13 @@ jobs:
         uses: actions/cache@v4
         with:
           path: ${{ env.CCACHE_DIR }}
-          key: android-vanilla-${{ runner.os }}-${{ hashFiles('src/android/**/*.gradle*', 'src/android/gradle/wrapper/gradle-wrapper.properties', 'CMakeLists.txt', '.gitmodules') }}
+          key: android-vanilla-${{ runner.os }}-${{ hashFiles('src/android/**/*.gradle*', 'src/android/gradle/wrapper/gradle-wrapper.properties', 'src/android/app/src/main/cpp/**', 'CMakeLists.txt', '.gitmodules') }}
           restore-keys: |
             android-vanilla-${{ runner.os }}-
 
       - name: Install build tools
         run: |
+          sudo apt-get update
           sudo apt-get install -y ccache apksigner zip
           if [ ! -d "$ANDROID_HOME/cmake/3.30.3" ]; then
             yes | "$ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager" --install "cmake;3.30.3"
