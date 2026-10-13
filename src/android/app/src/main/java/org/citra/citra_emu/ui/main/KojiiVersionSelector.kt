@@ -19,6 +19,7 @@ import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
+import org.citra.citra_emu.R
 import org.json.JSONArray
 import java.net.HttpURLConnection
 import java.net.URL
